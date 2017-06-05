@@ -11,9 +11,9 @@ $(function(){
 
     //this needs append the input text to the array
     groceryList.push($("#textField").val());
-    //clear the textField value
 
-    $("#textField").val("");
+    $("#textField").val(""); //clear the textField value
+    $("#textField").focus(); //sets focus
 
     console.log(groceryList);
   });
@@ -29,16 +29,29 @@ $(function(){
     //another way to hide an HTML item
     // $("#form").addClass("hidden");
 
+    //reorder the array alphabetically
+    groceryList.sort();
+
     //loop through the array
     groceryList.forEach(function(item){
       //in each loop, append a line item in results
       $("#results").append("<li>" + item + "</li>");
     });
 
-
-
     //display full list of items
     console.log("hidden");
   });
+
+  //make the return key act like add item
+//   $(document).keypress(
+//     function(event){
+//      if (event.which == '13') {
+//         $("#addItem").trigger("click");
+//       }
+//
+//
+// });
+
+
 
 });
